@@ -103,6 +103,9 @@ const handlMultNumber = () => {
             case '/':
               handlDivNumber(); 
               break;
+              case '²':
+                handlQuadradoNumber(); 
+                break;
               
         default:
         break;
