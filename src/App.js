@@ -102,6 +102,7 @@ const handlMultNumber = () => {
             break;
             case '/':
               handlDivNumber(); 
+              break;
               
         default:
         break;
@@ -143,7 +144,7 @@ const handlMultNumber = () => {
         <Button label="=" onClick={handlEquals}/>
         </Row>
         <Row>
-        <Button label=" _ _" onClick={() => handleAddNumber('0')}/>
+        <Button label="_ _" onClick={() => handleAddNumber('0')}/>
         <Button label="0" onClick={() => handleAddNumber('0')}/>
         <Button label="X²" onClick={handlQuadradoNumber}/>
         <Button label=" _ _ " onClick={() => handleAddNumber('0')}/>
