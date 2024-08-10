@@ -54,8 +54,22 @@ const handlMultNumber = () => {
     setOperation('*')
   }
   else{
-    const menos = Number(firstNumber) * Number(currentNumber);
-    setCurrentNumber(String(menos))
+    const mult = Number(firstNumber) * Number(currentNumber);
+    setCurrentNumber(String(mult))
+    setOperation('')
+  }
+ }
+
+ const handlQuadradoNumber = () => {
+  if(firstNumber === '0'){
+    setFirstNumber (String(currentNumber));
+    setOperation('²')
+     
+   
+  }
+  else{
+    const quadrado = Math.pow(firstNumber, 2) ;
+    setCurrentNumber(String(quadrado))
     setOperation('')
   }
  }
@@ -67,14 +81,12 @@ const handlMultNumber = () => {
     setOperation('/')
   }
   else{
-    const menos = Number(firstNumber) / Number(currentNumber);
-    setCurrentNumber(String(menos))
+    const div = Number(firstNumber) / Number(currentNumber);
+    setCurrentNumber(String(div))
     setOperation('')
   }
  }
-
-
-
+   
  const handlEquals = () => {
   if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
    
@@ -90,7 +102,6 @@ const handlMultNumber = () => {
             break;
             case '/':
               handlDivNumber(); 
-              break;
               
         default:
         break;
@@ -134,7 +145,7 @@ const handlMultNumber = () => {
         <Row>
         <Button label=" _ _" onClick={() => handleAddNumber('0')}/>
         <Button label="0" onClick={() => handleAddNumber('0')}/>
-        <Button label=" _ _ " onClick={() => handleAddNumber('0')}/>
+        <Button label="X²" onClick={handlQuadradoNumber}/>
         <Button label=" _ _ " onClick={() => handleAddNumber('0')}/>
         </Row>
  
